@@ -51,5 +51,11 @@ class AvatarsIO
 	@avatarUrl: (service, key) -> "http://avatars.io/#{ service }/#{ key }"
 	@avatarURL: -> @avatarUrl.apply @, arguments
 	@avatar_url: -> @avatarUrl.apply @, arguments
+	@avatar: -> @avatarUrl.apply @, arguments
+	
+	@autoUrl: (key) -> "http://avatars.io/auto/#{ key }"
+	@autoURL: -> @autoUrl.apply @, arguments
+	@auto_url: -> @autoUrl.apply @, arguments
+	@auto: -> @autoUrl.apply @, arguments
 
 module.exports = AvatarsIO

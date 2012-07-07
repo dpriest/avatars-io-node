@@ -15,6 +15,10 @@ var AvatarsIO = require('avatars.io');
 
 AvatarsIO.assetURL('twitter', 'vdemedes'); // http://avatars.io/twitter/vdemedes
 
+// auto-detecting avatar on social networks
+
+AvatarsIO.auto('vdemedes'); // http://avatars.io/auto/vdemedes
+
 // uploading own avatars
 
 AvatarsIO.appId = 'your app id';

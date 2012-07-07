@@ -17,3 +17,6 @@ describe 'AvatarsIO', ->
 	
 	it 'should return Twitter\'s avatar URL', ->
 		AvatarsIO.avatarUrl('twitter', 'vdemedes').should.equal 'http://avatars.io/twitter/vdemedes'
+	
+	it 'should return auto avatar URL', ->
+		AvatarsIO.auto('vdemedes').should.equal 'http://avatars.io/auto/vdemedes'
