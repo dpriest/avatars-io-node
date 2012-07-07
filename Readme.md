@@ -18,6 +18,7 @@ AvatarsIO.assetURL('twitter', 'vdemedes'); // http://avatars.io/twitter/vdemedes
 // auto-detecting avatar on social networks
 
 AvatarsIO.auto('vdemedes'); // http://avatars.io/auto/vdemedes
+AvatarsIO.auto('vdemedes', ['facebook', 'twitter']); // http://avatars.io/auto/vdemedes?services=facebook,twitter
 
 // uploading own avatars
 

@@ -53,7 +53,9 @@ class AvatarsIO
 	@avatar_url: -> @avatarUrl.apply @, arguments
 	@avatar: -> @avatarUrl.apply @, arguments
 	
-	@autoUrl: (key) -> "http://avatars.io/auto/#{ key }"
+	@autoUrl: (key, services = []) ->
+		if services.length is 0 then "http://avatars.io/auto/#{ key }" else "http://avatars.io/auto/#{ key }?services=#{ services.join ',' }"
+	
 	@autoURL: -> @autoUrl.apply @, arguments
 	@auto_url: -> @autoUrl.apply @, arguments
 	@auto: -> @autoUrl.apply @, arguments

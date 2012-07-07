@@ -20,3 +20,6 @@ describe 'AvatarsIO', ->
 	
 	it 'should return auto avatar URL', ->
 		AvatarsIO.auto('vdemedes').should.equal 'http://avatars.io/auto/vdemedes'
+	
+	it 'should return auto avatar URL only for Twitter and Facebook', ->
+		AvatarsIO.auto('vdemedes', ['twitter', 'facebook']).should.equal 'http://avatars.io/auto/vdemedes?services=twitter,facebook'
