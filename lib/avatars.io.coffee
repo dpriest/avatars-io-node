@@ -18,6 +18,7 @@ class AvatarsIO
 				headers:
 					'x-client_id': @appId
 					'Authorization': "OAuth #{ @accessToken }"
+					'Content-Type': 'application/json'
 				body: JSON.stringify
 					data:
 						filename: path
@@ -44,6 +45,7 @@ class AvatarsIO
 						headers:
 							'x-client_id': @appId
 							'Authorization': "OAuth #{ @accessToken }"
+							'Content-Type': 'application/json'
 						body: ''
 					, (err, res, body) ->
 						callback false, JSON.parse(body).data
