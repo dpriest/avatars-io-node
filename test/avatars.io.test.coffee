@@ -6,13 +6,13 @@ AvatarsIO.accessToken = 'your access token'
 
 describe 'AvatarsIO', ->
 	it 'should upload an image', (done) ->
-		AvatarsIO.upload '/Users/vadimdemedes/Pictures/People.jpg', (err, url) ->
+		AvatarsIO.upload '/Users/vadimdemedes/Desktop/Picture.jpg', (err, url) ->
 			/^http\:\/\/avatars\.io\/[A-Za-z0-9]+$/.test(url).should.equal true
 			do done
 	
 	it 'should upload an image with assigned identifier', (done) ->
-		AvatarsIO.upload '/Users/vadimdemedes/Pictures/Ocean.jpg', 'beautiful-ocean', (err, url) ->
-			url.indexOf('beautiful-ocean').should.not.equal -1
+		AvatarsIO.upload '/Users/vadimdemedes/Desktop/Small-Picture.jpg', 'small-picture', (err, url) ->
+			url.indexOf('small-picture').should.not.equal -1
 			do done
 	
 	it 'should return Twitter\'s avatar URL', ->
