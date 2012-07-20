@@ -46,9 +46,9 @@ class AvatarsIO
 							'x-client_id': @appId
 							'Authorization': "OAuth #{ @accessToken }"
 							'Content-Type': 'application/json'
-						body: ''
+						body: '{}'
 					, (err, res, body) ->
-						callback false, JSON.parse(body).data
+						callback false, JSON.parse(body).data.data
 	
 	@avatarUrl: (service, key) -> "http://avatars.io/#{ service }/#{ key }"
 	@avatarURL: -> @avatarUrl.apply @, arguments
