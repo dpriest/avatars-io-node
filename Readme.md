@@ -42,4 +42,4 @@ Run tests by executing `mocha` in Terminal.
 
 # License
 
-MIT.
+&copy; Chute Corporation.
