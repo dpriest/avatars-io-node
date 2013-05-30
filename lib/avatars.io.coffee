@@ -5,6 +5,7 @@ crypto = require 'crypto'
 class AvatarsIO
 	@appId: ''
 	@accessToken: ''
+	@host: 'http://avatars.io'
 	
 	@upload: (path, identifier, callback) ->
 		if 'function' is typeof identifier
@@ -13,7 +14,7 @@ class AvatarsIO
 		
 		fs.readFile path, (err, buffer) =>
 			request
-				url: 'http://avatars.io/v1/token'
+				url: "#{ @host }/v1/token"
 				method: 'POST'
 				headers:
 					'x-client_id': @appId
@@ -40,7 +41,7 @@ class AvatarsIO
 					body: buffer
 				, =>
 					request
-						url: "http://avatars.io/v1/token/#{ body.data.id }/complete"
+						url: "#{ @host }/v1/token/#{ body.data.id }/complete"
 						method: 'POST'
 						headers:
 							'x-client_id': @appId
@@ -50,13 +51,13 @@ class AvatarsIO
 					, (err, res, body) ->
 						callback false, JSON.parse(body).data.data
 	
-	@avatarUrl: (service, key) -> "http://avatars.io/#{ service }/#{ key }"
+	@avatarUrl: (service, key) -> "#{ @host }/#{ service }/#{ key }"
 	@avatarURL: -> @avatarUrl.apply @, arguments
 	@avatar_url: -> @avatarUrl.apply @, arguments
 	@avatar: -> @avatarUrl.apply @, arguments
 	
 	@autoUrl: (key, services = []) ->
-		if services.length is 0 then "http://avatars.io/auto/#{ key }" else "http://avatars.io/auto/#{ key }?services=#{ services.join ',' }"
+		if services.length is 0 then "#{ @host }/auto/#{ key }" else "#{ @host }/auto/#{ key }?services=#{ services.join ',' }"
 	
 	@autoURL: -> @autoUrl.apply @, arguments
 	@auto_url: -> @autoUrl.apply @, arguments

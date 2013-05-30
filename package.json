@@ -1,6 +1,6 @@
 {
 	"name": "avatars.io",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Avatars.io client",
 	"author": "Vadim Demedes <sbioko@gmail.com>",
 	"license": "MIT",
